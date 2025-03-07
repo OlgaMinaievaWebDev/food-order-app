@@ -1,14 +1,21 @@
+import { useContext } from 'react'
 import logoImg from '../../public/logo.jpg'
 import Button from './UI/Button'
+import { CartContext } from '../store/CartContext'
 function Header() {
+  const cartCtx = useContext(CartContext)
+
+  const totalCartItems = cartCtx.items.reduce((total, item) => { return total + item.quantity }, 0)
+  
+  
  return (
   <header id="main-header">
    <div id="title">
     <img src={logoImg} alt="logo image" />
-    <h1>REACTFOOD</h1>
+    <h1>ReactFood</h1>
    </div>
    <nav>
-    <Button textOnly>Cart (0)</Button>
+    <Button textOnly>Cart ({totalCartItems})</Button>
   </nav>
  </header>
  )

@@ -76,9 +76,11 @@ function CartContextProvider({ children }) {
   addItem: addItem,
   removeItem: removeItem,
   }
+ 
+ console.log(cartContext)
  return (
-  <CartContext.Provider>{ children}</CartContext.Provider>
+  <CartContext.Provider value={cartContext}>{ children}</CartContext.Provider>
  )
 }
 
-export { CartContextProvider, CartContext }
+export { CartContext, CartContextProvider };
