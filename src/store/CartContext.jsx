@@ -57,7 +57,7 @@ return {...state, items: updatedItems}
 }
 
 
-function CartContextProvider({ children }) {
+export function CartContextProvider({ children }) {
 
  const [cart, dispatchCartAction] = useReducer(cartReducer, {
   items: [],
@@ -79,8 +79,8 @@ function CartContextProvider({ children }) {
  
  console.log(cartContext)
  return (
-  <CartContext.Provider value={cartContext}>{ children}</CartContext.Provider>
- )
+   <CartContext.Provider value={cartContext}>{children}</CartContext.Provider>
+ );
 }
 
-export { CartContext, CartContextProvider };
+export default CartContext;
