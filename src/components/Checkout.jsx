@@ -18,7 +18,7 @@ function Checkout() {
  }
  
  return (
-  <Modal open={userProgressCtz.progress === 'checkout'}>
+  <Modal open={userProgressCtz.progress === 'checkout'} onClose={handleCloseCheckout}>
    <form >
     <h2>Checkout</h2>
     <p>Total Amount: {currencyFormatter.format(cartTotal)}</p>
