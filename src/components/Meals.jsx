@@ -14,6 +14,10 @@ function Meals() {
     return <p>Fetching meals...</p>
   }
 
+  if (error) {
+    return <Error title="Error" message={error} />
+  }
+
  return (
    <ul id="meals">
      {loadedMeals.map((meal) => (
